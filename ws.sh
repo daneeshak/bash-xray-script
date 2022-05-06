@@ -83,7 +83,7 @@ cat << EOF > /usr/local/etc/xray/config.json
         "network": "ws",
         "security": "none"
         "wsSettings": {
-                  "path": "/service/location/api/v1/locationinfo"
+                  "path": "/service/location/api/v1/locationinfo?tenant_code=mobitel&product=mobitel&client=web"
         }
       }
     }
