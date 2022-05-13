@@ -29,7 +29,7 @@ Manage Script
 
 5)cd bash-xray-script
 
-6)sudo chmod 777 xray-nodomain.sh
+6)sudo chmod +x xray-nodomain.sh
 
 7)sudo ./xray-nodomain.sh
 
@@ -43,8 +43,6 @@ https://github.com/2dust/v2rayNG)
 2)Windows User කෙනෙක්නම් V2rayN හො Netch Software දෙක Download කරගන්න
 
 ![logo](https://telegra.ph/file/372eb568ce7a7776aa8c4.jpg)
-
-* AlterId   =   4
 
 * Http Port =  80
 
