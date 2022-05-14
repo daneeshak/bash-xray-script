@@ -128,10 +128,10 @@ mkdir -p /var/www/$DOMAIN_NAME/html
 cat << EOF > /var/www/$DOMAIN_NAME/html/index.html
 <html>
     <head>
-        <title>daneesha</title>
+        <title>Danee</title>
     </head>
     <body>
-        <h1>Life's a wheel of fortune and it's my chance to spin it.</h1>
+        <h1>Fuck You Dialog</h1>
     </body>
 </html>
 EOF
