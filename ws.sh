@@ -46,7 +46,7 @@ cat << EOF > /usr/local/etc/xray/config.json
   "inbounds": [
     {
       "port": 443,
-      "protocol": "vless",
+      "protocol": "vmess",
       "settings": {
         "clients": [
           {
@@ -70,7 +70,7 @@ cat << EOF > /usr/local/etc/xray/config.json
     },
     {
       "port": 80,
-      "protocol": "vless",
+      "protocol": "vmess",
       "settings": {
         "clients": [
           {
@@ -81,9 +81,10 @@ cat << EOF > /usr/local/etc/xray/config.json
       },
       "streamSettings": {
         "network": "ws",
-        "security": "none"
+        "security": "none",
         "wsSettings": {
-                  "path": "/service/location/api/v1/locationinfo?tenant_code=mobitel&product=mobitel&client=web"
+          "acceptProxyProtocol": true,
+          "path": "/vmessws"
         }
       }
     }
