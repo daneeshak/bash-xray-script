@@ -56,9 +56,14 @@ cat << EOF > /usr/local/etc/xray/config.json
             "xver": 1
           },
           {
-            "path": "/trojanws",
+            "path": "/vmessws",
             "dest": 3456,
             "xver": 1
+          },
+          {
+            "path": "/trojanws",
+            "dest": 4567,
+            "xver": 1 
           }
         ]
       },
@@ -159,11 +164,33 @@ cat << EOF > /usr/local/etc/xray/config.json
     {
       "port": 3456,
       "listen": "127.0.0.1",
-      "protocol": "trojan",
+      "protocol": "vmess",
       "settings": {
         "clients": [
           {
             "id": "$UUID",
+            "level": 0,
+            "email": "love@example.com"
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "security": "none",
+        "wsSettings": {
+          "acceptProxyProtocol": true,
+          "path": "/vmessws"
+        }
+      }
+    },
+    {
+      "port": 4567,
+      "listen": "127.0.0.1",
+      "protocol": "trojan",
+      "settings": {
+        "clients": [
+          {
+            "password": "$UUID",
             "level": 0,
             "email": "love@example.com"
           }
