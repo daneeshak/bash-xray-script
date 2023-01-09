@@ -77,8 +77,8 @@ cat << EOF > /usr/local/etc/xray/config.json
           ],
           "certificates": [
             {
-              "certificateFile": "/etc/xray/xray.crt",
-              "keyFile": "/etc/xray/xray.key"
+              "certificateFile": "/etc/ssl/private/fullchain.cer",
+              "keyFile": "/etc/ssl/private/private.key"
             }
           ]
         }
@@ -208,16 +208,6 @@ cat << EOF > /usr/local/etc/xray/config.json
   ]
 }
 EOF
-
-#accuring a ssl certificate (self-sigend openssl)
-
-openssl req -new -newkey rsa:4096 -days 365 -nodes -x509 \
-    -subj /C=US/ST=Denial/L=Springfield/O=Dis/CN=dak.disnet.gq \
-    -keyout xray.key  -out xray.crt
-mkdir /etc/xray
-cp xray.key /etc/xray/xray.key
-cp xray.crt /etc/xray/xray.crt
-chmod 644 /etc/xray/xray.key
 
 #starting xray core on sytem startup
 
