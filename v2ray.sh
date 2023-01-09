@@ -34,7 +34,7 @@ cat << EOF > /usr/local/etc/xray/config.json
         "clients": [
           {
             "id": "$UUID",
-            "email": "xtls",
+            "email": "love@example.com",
             "flow": "xtls-rprx-vision",
             "level": 0
           }
@@ -71,13 +71,14 @@ cat << EOF > /usr/local/etc/xray/config.json
         "network": "tcp",
         "security": "tls",
         "tlsSettings": {
+	 "minVersion": "1.2",
          "alpn": [
            "http/1.1"
           ],
           "certificates": [
             {
-              "certificateFile": "/etc/ssl/private/fullchain.cer",
-              "keyFile": "/etc/ssl/private/private.key"
+              "certificateFile": "/etc/xray/xray.crt",
+              "keyFile": "/etc/xray/xray.key"
             }
           ]
         }
