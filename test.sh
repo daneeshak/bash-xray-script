@@ -16,6 +16,7 @@ apt purge iptables-persistent
 apt install ufw
 ufw allow 'OpenSSH'
 ufw allow 443/tcp
+ufw allow 80/tcp
 ufw enable
 
 bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install
