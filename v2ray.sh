@@ -15,6 +15,7 @@ apt upgrade
 apt purge iptables-persistent
 apt install ufw
 ufw allow 'OpenSSH'
+ufw allow 80/tcp
 ufw allow 443/tcp
 ufw enable
 
@@ -34,7 +35,7 @@ cat << EOF > /usr/local/etc/xray/config.json
         "clients": [
           {
             "id": "$UUID",
-            "email": "love@example.com",
+            "email": "xtls",
             "flow": "xtls-rprx-vision",
             "level": 0
           }
