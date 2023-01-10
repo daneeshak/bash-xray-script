@@ -72,9 +72,9 @@ cat << EOF > /usr/local/etc/xray/config.json
         "network": "tcp",
         "security": "tls",
         "tlsSettings": {
-	 "minVersion": "1.2",
-         "alpn": [
-           "http/1.1"
+	  "minVersion": "1.2",
+          "alpn": [
+            "http/1.1"
           ],
           "certificates": [
             {
@@ -209,13 +209,3 @@ cat << EOF > /usr/local/etc/xray/config.json
   ]
 }
 EOF
-
-#starting xray core on sytem startup
-
-systemctl enable xray
-systemctl restart xray
-
-#install bbr
-
-curl -LJO https://raw.githubusercontent.com/teddysun/across/master/bbr.sh
-bash bbr.sh
