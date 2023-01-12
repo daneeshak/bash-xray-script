@@ -209,3 +209,8 @@ cat << EOF > /usr/local/etc/xray/config.json
   ]
 }
 EOF
+
+#install bbr
+
+curl -LJO https://raw.githubusercontent.com/teddysun/across/master/bbr.sh
+bash bbr.sh
